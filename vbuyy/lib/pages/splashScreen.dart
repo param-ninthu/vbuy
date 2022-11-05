@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key, required this.title});
@@ -14,16 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: new BoxDecoration(
-          gradient: new LinearGradient(
-              colors: [
-                Theme.of(context).accentColor,
-                Theme.of(context).primaryColor
-              ],
-              begin: const FractionalOffset(0, 0),
-              end: const FractionalOffset(1.0, 0.0),
-              stops: [0.0, 1.0],
-              tileMode: TileMode.clamp)),
+      color: HexColor('#fff'),
       child: AnimatedOpacity(
         opacity: 1.0,
         duration: Duration(milliseconds: 1200),

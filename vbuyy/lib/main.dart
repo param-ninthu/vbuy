@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:vbuyy/pages/splashScreen.dart';
@@ -18,9 +16,9 @@ class Home extends StatelessWidget {
       title: 'vBuyy',
       theme: ThemeData(
           primaryColor: _primaryColor,
-          accentColor: _accentColor,
           scaffoldBackgroundColor: Color.fromARGB(255, 255, 255, 255),
-          primarySwatch: Colors.blue),
+          colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+              .copyWith(secondary: _accentColor)),
       home: SplashScreen(title: 'vBuyy'),
     );
   }
