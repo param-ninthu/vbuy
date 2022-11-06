@@ -15,17 +15,33 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: HexColor('#fff'),
+      decoration: new BoxDecoration(color: Colors.white),
       child: AnimatedOpacity(
-        opacity: 1.0,
-        duration: Duration(milliseconds: 1200),
-        child: Center(
+          opacity: 1.0,
+          duration: Duration(milliseconds: 1200),
+          child: Center(
             child: Container(
-          height: 140,
-          width: 140,
-          child: ClipOval(child: Icon(Icons.android_outlined)),
-        )),
-      ),
+                height: 140.0,
+                width: 140.0,
+                child: Center(
+                  child: ClipOval(
+                      child: Icon(
+                    Icons.handshake,
+                    size: 128.0,
+                    color: Colors.red,
+                  )),
+                ),
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Theme.of(context).colorScheme.secondary,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.blue.shade500,
+                          blurRadius: 2.0,
+                          offset: Offset(1.0, 0.0),
+                          spreadRadius: 2.0)
+                    ])),
+          )),
     );
   }
 }
