@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:vbuyy/common/themeHelper.dart';
+import 'package:vbuyy/pages/profileScreen.dart';
 
 import 'widgets/headerWidget.dart';
 
@@ -71,7 +72,12 @@ class _LoginPageState extends State<LoginPage> {
                                 ThemeHelper().buttonBoxDecoration(context),
                             child: ElevatedButton(
                               style: ThemeHelper().buttonStyle(),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => ProfileScreen()));
+                              },
                               child: Padding(
                                 padding: EdgeInsets.fromLTRB(40, 10, 40, 10),
                                 child: Text(
