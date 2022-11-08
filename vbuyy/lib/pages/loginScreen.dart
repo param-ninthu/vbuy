@@ -1,8 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:vbuyy/common/themeHelper.dart';
 import 'package:vbuyy/pages/profileScreen.dart';
+import 'package:vbuyy/pages/signupScreen.dart';
 
 import 'widgets/headerWidget.dart';
 
@@ -92,7 +94,28 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           Container(
                             margin: EdgeInsets.fromLTRB(10, 20, 10, 20),
-                            child: Text('Don\'t have an account? Create'),
+                            child: Text.rich(
+                              TextSpan(
+                                children: [
+                                  TextSpan(text: 'Don\'t have an account? '),
+                                  TextSpan(
+                                      text: 'Create',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Theme.of(context).accentColor),
+                                      recognizer: TapGestureRecognizer()
+                                        ..onTap = () => {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      SignupScreen(),
+                                                ),
+                                              ),
+                                            }),
+                                ],
+                              ),
+                            ),
                           )
                         ],
                       ),
